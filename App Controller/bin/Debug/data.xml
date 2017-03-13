@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Process Controller - Seyrani DEMİREL-->
+<Uygulamalar>
+  <Uygulama>
+    <id>0</id>
+    <name>notepad++.exe</name>
+    <path>C:\Program Files (x86)\Notepad++\notepad++.exe</path>
+  </Uygulama>
+</Uygulamalar>

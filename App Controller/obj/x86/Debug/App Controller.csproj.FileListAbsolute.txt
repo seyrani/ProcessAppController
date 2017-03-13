@@ -1,0 +1,17 @@
+C:\Users\vm\Desktop\Project\AppController\App Controller\bin\Debug\App Controller.exe
+C:\Users\vm\Desktop\Project\AppController\App Controller\bin\Debug\App Controller.pdb
+C:\Users\vm\Desktop\Project\AppController\App Controller\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\vm\Desktop\Project\AppController\App Controller\obj\x86\Debug\App_Controller.Form1.resources
+C:\Users\vm\Desktop\Project\AppController\App Controller\obj\x86\Debug\App_Controller.Properties.Resources.resources
+C:\Users\vm\Desktop\Project\AppController\App Controller\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\vm\Desktop\Project\AppController\App Controller\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\vm\Desktop\Project\AppController\App Controller\obj\x86\Debug\App Controller.exe
+C:\Users\vm\Desktop\Project\AppController\App Controller\obj\x86\Debug\App Controller.pdb
+C:\Users\bim\Desktop\vsc#\AppController\App Controller\bin\Debug\App Controller.exe
+C:\Users\bim\Desktop\vsc#\AppController\App Controller\bin\Debug\App Controller.pdb
+C:\Users\bim\Desktop\vsc#\AppController\App Controller\obj\x86\Debug\App_Controller.Form1.resources
+C:\Users\bim\Desktop\vsc#\AppController\App Controller\obj\x86\Debug\App_Controller.Properties.Resources.resources
+C:\Users\bim\Desktop\vsc#\AppController\App Controller\obj\x86\Debug\App Controller.csproj.GenerateResource.Cache
+C:\Users\bim\Desktop\vsc#\AppController\App Controller\obj\x86\Debug\App Controller.exe
+C:\Users\bim\Desktop\vsc#\AppController\App Controller\obj\x86\Debug\App Controller.pdb
+C:\Users\bim\Desktop\vsc#\AppController\App Controller\obj\x86\Debug\App Controller.csprojResolveAssemblyReference.cache
