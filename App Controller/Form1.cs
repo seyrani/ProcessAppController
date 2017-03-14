@@ -223,19 +223,34 @@ namespace App_Controller
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            veriKayitEt();
+
+            if (txtName.Text == String.Empty || txtPath.Text == String.Empty)
+            {
+                MessageBox.Show("Lütfen program adı ve yolunu giriniz.", "Bilgi", MessageBoxButtons.OK);
+            }
+            else
+            {
+                veriKayitEt();
+            }
+            
         }
 
         private void btnSil_Click(object sender, EventArgs e)
         {
+            var mesajSil = MessageBox.Show("Seçilen kaydı silmek istediğinize emin misiniz?", "Uyarı", MessageBoxButtons.YesNoCancel);
+
+
             try
             {
+                if (mesajSil == DialogResult.Yes)
+                {
+                    XDocument xDoc = XDocument.Load("data.xml");
+                    XElement deletedElement = xDoc.Root.Elements().FirstOrDefault(xe => xe.Element("id").Value == id);
 
-                XDocument xDoc = XDocument.Load("data.xml");
-                XElement deletedElement = xDoc.Root.Elements().FirstOrDefault(xe => xe.Element("id").Value == id);
+                    deletedElement.Remove();
+                    xDoc.Save("data.xml");
 
-                deletedElement.Remove();
-                xDoc.Save("data.xml");
+                }
 
                 listele();
             }
@@ -256,6 +271,7 @@ namespace App_Controller
             currentElement.SetElementValue("path", txtPath.Text);
             xDoc.Save("data.xml");
 
+            ClearTextBox();
             listele();
         }
 
