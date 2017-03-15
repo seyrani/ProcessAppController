@@ -31,6 +31,11 @@ namespace App_Controller
             xmlOlusturur();
             listele();
             listviewRenk();
+            
+            logListBox.DataSource = File.ReadAllLines(@"C:\Process Controller\LogsImageServerController.log");
+            logListBox.Refresh();
+                       
+                       
         }
 
 
@@ -54,7 +59,8 @@ namespace App_Controller
             }
             catch (Exception ex)
             {
-                AppendToLog(string.Format("Olay günlüğü [{0}]: [{1}] \r\n", DateTime.Now, ex.Message));
+                //Olay günlüğü [{0}]: [{1}] \r\n
+                AppendToLog(string.Format("Olay günlüğü [{0}]: [{1}]", DateTime.Now, ex.Message));
                 MessageBox.Show(ex.Message);
             }
 
@@ -97,7 +103,7 @@ namespace App_Controller
         {
             if (File.Exists("data.xml"))
             {
-                listView1.Items.Clear();
+                logTextBox.Items.Clear();
 
                 XmlDocument doc = new XmlDocument();
 
@@ -111,7 +117,7 @@ namespace App_Controller
                     lv.Text = secilen["id"].InnerText;
                     lv.SubItems.Add(secilen["name"].InnerText);
                     lv.SubItems.Add(secilen["path"].InnerText);
-                    listView1.Items.Add(lv);
+                    logTextBox.Items.Add(lv);
 
                     if (comboBox1.Items.IndexOf(secilen["name"].InnerText) == -1)
                     {
@@ -127,7 +133,7 @@ namespace App_Controller
         //listview renklendir
         public void listviewRenk()
         {
-            ListView listView = this.listView1;
+            ListView listView = this.logTextBox;
             int i = 0;
             Color shaded = Color.FromArgb(240, 240, 240);
             foreach (ListViewItem item in listView.Items)
@@ -210,9 +216,9 @@ namespace App_Controller
         string id = null;
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listView1.SelectedItems.Count > 0)
+            if (logTextBox.SelectedItems.Count > 0)
             {
-                ListViewItem lv = listView1.SelectedItems[0];
+                ListViewItem lv = logTextBox.SelectedItems[0];
                 txtId.Text = lv.SubItems[0].Text;
                 txtName.Text = lv.SubItems[1].Text;
                 txtPath.Text = lv.SubItems[2].Text;
@@ -278,7 +284,7 @@ namespace App_Controller
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            listView1.Items.Clear();
+            logTextBox.Items.Clear();
 
             XmlDocument doc = new XmlDocument();
 
@@ -296,7 +302,7 @@ namespace App_Controller
                     lv.Text = secilen["id"].InnerText;
                     lv.SubItems.Add(secilen["name"].InnerText);
                     lv.SubItems.Add(secilen["path"].InnerText);
-                    listView1.Items.Add(lv);
+                    logTextBox.Items.Add(lv);
 
                 }
 
@@ -361,7 +367,7 @@ namespace App_Controller
                     process.WaitForExit();
 
                     // process.TotalProcessorTime cpu kullanım değeri 
-                    AppendToLog(string.Format("Olay günlüğü Start/Stop [{0}]: [{1}] \r\n", DateTime.Now, process.StartTime));
+                    AppendToLog(string.Format("Servis Restart Time: [{0}]: [{1}]", DateTime.Now, process.StartTime));
 
 
                 }
@@ -369,12 +375,13 @@ namespace App_Controller
             }
             catch (Exception ex)
             {
-                AppendToLog(string.Format("Olay günlüğü [{0}]: [{1}] \r\n", DateTime.Now, ex.Message));
+                AppendToLog(string.Format("Warning: [{0}]: [{1}]", DateTime.Now, ex.Message));
                 MessageBox.Show(ex.Message);
             }
 
         }
 
+      
         Thread baslat;
         private void btnStart_Click(object sender, EventArgs e)
         {
@@ -392,7 +399,7 @@ namespace App_Controller
             }
             catch (Exception ex)
             {
-                AppendToLog(string.Format("Olay günlüğü [{0}]: [{1}] \r\n", DateTime.Now, ex.Message));
+                AppendToLog(string.Format("Warning: [{0}]: [{1}]", DateTime.Now, ex.Message));
                 MessageBox.Show(ex.Message);
             }
         }

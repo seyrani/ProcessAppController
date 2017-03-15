@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.logTextBox = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -55,30 +55,30 @@
             this.label3 = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.logListBox = new System.Windows.Forms.ListBox();
             this.contextMenuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDown)).BeginInit();
             this.SuspendLayout();
             // 
-            // listView1
+            // logTextBox
             // 
-            this.listView1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.logTextBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.logTextBox.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
-            this.listView1.ContextMenuStrip = this.contextMenuStrip1;
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.listView1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.listView1.FullRowSelect = true;
-            this.listView1.Location = new System.Drawing.Point(249, 0);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(353, 245);
-            this.listView1.TabIndex = 1;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.logTextBox.ContextMenuStrip = this.contextMenuStrip1;
+            this.logTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.logTextBox.FullRowSelect = true;
+            this.logTextBox.Location = new System.Drawing.Point(249, 0);
+            this.logTextBox.Name = "logTextBox";
+            this.logTextBox.Size = new System.Drawing.Size(353, 179);
+            this.logTextBox.TabIndex = 1;
+            this.logTextBox.UseCompatibleStateImageBehavior = false;
+            this.logTextBox.View = System.Windows.Forms.View.Details;
+            this.logTextBox.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -286,6 +286,17 @@
             this.notifyIcon1.Text = "Process Controller Running";
             this.notifyIcon1.Visible = true;
             // 
+            // logListBox
+            // 
+            this.logListBox.BackColor = System.Drawing.SystemColors.Window;
+            this.logListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.logListBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.logListBox.FormattingEnabled = true;
+            this.logListBox.Location = new System.Drawing.Point(249, 182);
+            this.logListBox.Name = "logListBox";
+            this.logListBox.Size = new System.Drawing.Size(353, 56);
+            this.logListBox.TabIndex = 4;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,9 +304,10 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(602, 245);
+            this.Controls.Add(this.logListBox);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.logTextBox);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.ShowIcon = false;
@@ -314,7 +326,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView logTextBox;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
@@ -339,6 +351,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem sagTikMenu;
+        private System.Windows.Forms.ListBox logListBox;
     }
 }
 
